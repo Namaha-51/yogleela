@@ -1,69 +1,645 @@
-import Image from "next/image";
+// "use client";
+
+// import Link from "next/link";
+// import { motion } from "framer-motion";
+
+// // Reusable animation variants for that Awwwards feel
+// const fadeUp = {
+//   hidden: { opacity: 0, y: 40 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } }
+// };
+
+// const fadeUpSlow = {
+//   hidden: { opacity: 0, y: 60 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] } }
+// };
+
+// const staggerContainer = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+//   }
+// };
+
+// export default function Home() {
+//   return (
+//     <main className="min-h-screen bg-[#FDFDFD] selection:bg-emerald-200 selection:text-emerald-900 overflow-x-hidden">
+      
+//       {/* Loading Curtain Reveal */}
+//       <motion.div 
+//         initial={{ y: 0 }}
+//         animate={{ y: "-100%" }}
+//         transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
+//         className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center"
+//       />
+
+//       {/* 1. HERO SECTION */}
+//       <section className="relative w-full min-h-[90vh] flex flex-col justify-center px-6 lg:px-12 py-24 lg:py-0 border-b border-slate-100 overflow-hidden">
+//         <motion.div 
+//           initial={{ scale: 1.1 }}
+//           animate={{ scale: 1 }}
+//           transition={{ duration: 2.5, ease: "easeOut", delay: 0.2 }}
+//           className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center bg-no-repeat"
+//         />
+        
+//         <div className="relative z-10 max-w-7xl mx-auto w-full">
+//           <motion.div 
+//             variants={staggerContainer}
+//             initial="hidden"
+//             animate="visible"
+//             className="max-w-2xl flex flex-col items-start text-left pt-12 lg:pt-0"
+//           >
+//             <motion.div variants={fadeUp} className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-md mb-8 shadow-sm">
+//               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+//               <span className="text-[10px] font-bold text-emerald-950 tracking-[0.25em] uppercase">Premium Formulations</span>
+//             </motion.div>
+
+//             <motion.h1 variants={fadeUp} className="text-6xl md:text-7xl lg:text-[6rem] font-medium tracking-tighter text-slate-900 mb-6 leading-[1]">
+//               Engineered <br/>
+//               <span className="text-emerald-800 italic font-light tracking-tight pr-2">Sulphur.</span>
+//             </motion.h1>
+            
+//             <motion.p variants={fadeUp} className="text-lg text-slate-700 font-light max-w-md mb-12 leading-relaxed">
+//               High-purity, scientifically formulated solutions driving the foundation of global agriculture and heavy manufacturing.
+//             </motion.p>
+            
+//             <motion.div variants={fadeUp} className="flex items-center gap-6">
+//               <Link href="/products" className="group flex items-center justify-center w-16 h-16 bg-emerald-900 text-white rounded-full hover:bg-emerald-800 hover:scale-105 transition-all duration-300 shadow-xl shadow-emerald-900/20">
+//                 <svg className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+//               </Link>
+//               <span className="text-sm font-semibold tracking-wide text-slate-900 uppercase">Explore Products</span>
+//             </motion.div>
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* 2. ABOUT US */}
+//       <section className="py-32 px-6 lg:px-12 bg-white relative overflow-hidden">
+//         <motion.div 
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true, margin: "-100px" }}
+//           variants={staggerContainer}
+//           className="max-w-7xl mx-auto"
+//         >
+//           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
+//             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 tracking-tight max-w-3xl leading-[1.1]">
+//               Over Two Decades of <span className="font-semibold text-emerald-900">Innovation, Quality & Trust.</span>
+//             </motion.h2>
+//             <motion.div variants={fadeUp}>
+//               <Link href="/about" className="group text-xs font-bold tracking-[0.2em] uppercase text-slate-400 hover:text-emerald-700 transition-colors flex items-center gap-2">
+//                 Our Story <span className="block w-8 h-[1px] bg-slate-300 group-hover:bg-emerald-700 group-hover:w-12 transition-all duration-300"></span>
+//               </Link>
+//             </motion.div>
+//           </div>
+
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-24 gap-x-12">
+//             {[
+//               { title: "Empower Farmers", desc: "Guiding cultivators to increase crop yields while promoting awareness of advanced, sustainable protection practices." },
+//               { title: "Customer-Centric", desc: "Delivering absolute service excellence by providing customized, scientifically-backed solutions tailored strictly to client requirements." },
+//               { title: "Long-Term Vision", desc: "Building unbreakable partnerships with suppliers, distributors, and global stakeholders through uncompromising reliability." },
+//               { title: "Pioneering Protection", desc: "Developing innovative, effective, and sustainable compounds that actively contribute to modern agricultural growth." }
+//             ].map((item, i) => (
+//               <motion.div variants={fadeUp} key={i} className="relative group pl-8 border-l border-slate-200 hover:border-emerald-500 transition-colors duration-500">
+//                 <span className="absolute -top-12 -left-4 text-[8rem] font-bold text-slate-50/80 group-hover:text-emerald-50/80 transition-colors duration-500 select-none z-0">
+//                   0{i+1}
+//                 </span>
+//                 <div className="relative z-10">
+//                   <h3 className="text-2xl font-semibold text-slate-900 mb-4">{item.title}</h3>
+//                   <p className="text-slate-500 font-light leading-relaxed max-w-sm">{item.desc}</p>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </motion.div>
+//       </section>
+
+//       {/* 3. WHY CHOOSE US */}
+//       <section className="py-32 px-6 lg:px-12 bg-[#F7F9F6] relative border-y border-slate-100 overflow-hidden">
+//         <motion.div 
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true, margin: "-100px" }}
+//           variants={staggerContainer}
+//           className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center"
+//         >
+//           <div className="lg:w-5/12 z-10">
+//             <motion.span variants={fadeUp} className="text-[10px] font-bold tracking-[0.25em] text-emerald-600 uppercase mb-6 block">Why Yogleela</motion.span>
+//             <motion.h2 variants={fadeUp} className="text-5xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-8">
+//               Delivering <span className="text-emerald-800 italic font-light pr-2">Absolute</span> Quality for Industry.
+//             </motion.h2>
+//             <motion.p variants={fadeUp} className="text-slate-600 font-light text-lg leading-relaxed mb-10">
+//               Since 2002, we have redefined sulphur manufacturing. Backed by advanced R&D and modern facilities, we formulate solutions that drive global markets without compromise.
+//             </motion.p>
+//             <motion.div variants={fadeUp}>
+//               <Link href="/contact" className="inline-flex items-center gap-3 text-sm font-semibold text-slate-900 hover:text-emerald-700 transition-colors group">
+//                 Partner with us 
+//                 <span className="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center group-hover:border-emerald-600 group-hover:bg-emerald-50 transition-all duration-300">
+//                   <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+//                 </span>
+//               </Link>
+//             </motion.div>
+//           </div>
+          
+//           <div className="lg:w-7/12 relative w-full h-[600px]">
+//             <motion.div variants={fadeUpSlow} className="absolute top-0 right-0 w-3/4 h-[400px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 z-20 group">
+//               <div className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out"></div>
+//               <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-transparent to-transparent"></div>
+//               <div className="absolute bottom-8 left-8 right-8 text-white">
+//                 <span className="text-6xl font-semibold tracking-tighter block mb-2">80<span className="text-3xl text-emerald-400">%</span></span>
+//                 <span className="text-sm font-light tracking-wide text-emerald-100 uppercase">Process Efficiency</span>
+//               </div>
+//             </motion.div>
+//             <motion.div variants={fadeUpSlow} className="absolute bottom-0 left-0 w-3/4 h-[350px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 z-10 group">
+//               <div className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out"></div>
+//               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+//               <div className="absolute bottom-8 left-8 right-8 text-white">
+//                 <span className="text-6xl font-semibold tracking-tighter block mb-2">50<span className="text-3xl text-slate-400">%</span></span>
+//                 <span className="text-sm font-light tracking-wide text-slate-300 uppercase">Farm Yield Growth</span>
+//               </div>
+//             </motion.div>
+//           </div>
+//         </motion.div>
+//       </section>
+
+//       {/* 4. TRUST BENTO GRID */}
+//       <section className="py-32 px-6 lg:px-12 bg-[#02130A] text-white">
+//         <motion.div 
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true, margin: "-100px" }}
+//           variants={staggerContainer}
+//           className="max-w-7xl mx-auto"
+//         >
+//           <div className="mb-20">
+//             <motion.span variants={fadeUp} className="text-[10px] font-bold tracking-[0.25em] text-emerald-500 uppercase mb-6 block">The Standard</motion.span>
+//             <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-light tracking-tight leading-[1.1] max-w-2xl">
+//               Trusted solutions backed by <span className="font-semibold text-white">innovation.</span>
+//             </motion.h2>
+//           </div>
+          
+//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+//             {[
+//               { title: "Advanced Manufacturing", colSpan: "lg:col-span-2" },
+//               { title: "Research & Development", colSpan: "lg:col-span-1" },
+//               { title: "Crop Protection", colSpan: "lg:col-span-2" },
+//               { title: "Industrial Applications", colSpan: "lg:col-span-3" },
+//               { title: "Customer-First", colSpan: "lg:col-span-2" }
+//             ].map((item, i) => (
+//               <motion.div variants={fadeUp} key={i} className={`${item.colSpan} relative h-48 rounded-2xl bg-white/5 border border-white/10 p-8 flex flex-col justify-end group hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden`}>
+//                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-500"></div>
+//                 <span className="text-emerald-500/50 font-bold text-sm mb-auto">0{i+1}</span>
+//                 <h3 className="font-medium text-lg text-white/90 tracking-wide z-10">{item.title}</h3>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </motion.div>
+//       </section>
+
+//       {/* 5. INDUSTRIES */}
+//       <section className="py-32 px-6 lg:px-12 bg-white">
+//         <motion.div 
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true, margin: "-100px" }}
+//           variants={staggerContainer}
+//           className="max-w-7xl mx-auto"
+//         >
+//           <motion.div variants={fadeUp} className="mb-24">
+//             <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-[1.1]">
+//               Powering Diverse Industries.
+//             </h2>
+//           </motion.div>
+
+//           <div className="flex flex-col border-t border-slate-200">
+//             {[
+//               { title: "Farming", desc: "Improving soil fertility, crop nutrition, and overall agricultural productivity.", link: "/products" },
+//               { title: "Rubber & Tyre", desc: "Essential for vulcanization, improving the strength and elasticity of rubber.", link: "/sulphur-powder-rubber-tyre-grade-microfine-grade" },
+//               { title: "Pharmaceutical", desc: "Pharma-grade sulphur strictly regulated for dermatological formulations.", link: "/sulphur-amlasar" },
+//               { title: "Explosives", desc: "Industrial sulphur utilized in the production of specialized formulations.", link: "/sulphur-powder" },
+//               { title: "Sugar Refining", desc: "Crucial during sugar processing to improve purification and color control.", link: "/sulphur-rock-granules-pallets" }
+//             ].map((ind, i) => (
+//               <motion.div variants={fadeUp} key={i}>
+//                 <Link href={ind.link} className="group flex flex-col lg:flex-row items-start lg:items-center justify-between py-10 border-b border-slate-200 hover:px-6 hover:bg-slate-50 transition-all duration-500">
+//                   <div className="w-full lg:w-1/3 mb-6 lg:mb-0">
+//                     <h3 className="text-3xl font-light text-slate-900 group-hover:text-emerald-800 transition-colors">{ind.title}</h3>
+//                   </div>
+                  
+//                   <div className="w-full lg:w-1/3 mb-6 lg:mb-0 px-0 lg:px-8">
+//                     <p className="text-slate-500 font-light text-sm leading-relaxed">{ind.desc}</p>
+//                   </div>
+                  
+//                   <div className="w-full lg:w-1/3 flex items-center justify-end gap-8">
+//                     <div className="w-32 h-16 rounded-full bg-slate-200 overflow-hidden relative opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-out hidden md:block">
+//                        <div className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center"></div>
+//                     </div>
+//                     <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-emerald-300 group-hover:bg-emerald-50 transition-colors">
+//                       <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-700 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+//                     </div>
+//                   </div>
+//                 </Link>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </motion.div>
+//       </section>
+
+//       {/* 6. FEATURED PRODUCTS */}
+//       <section className="py-32 px-6 lg:px-12 bg-[#F9FAFA]">
+//         <motion.div 
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true, margin: "-100px" }}
+//           variants={staggerContainer}
+//           className="max-w-7xl mx-auto"
+//         >
+//           <div className="flex justify-between items-end mb-20">
+//             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-light text-slate-900 tracking-tight leading-[1.1]">
+//               Trusted <span className="font-semibold text-emerald-900">Formulations.</span>
+//             </motion.h2>
+//             <motion.div variants={fadeUp}>
+//               <Link href="/products" className="text-xs font-bold tracking-[0.2em] uppercase text-emerald-700 hover:text-slate-900 transition-colors hidden md:block">
+//                 View Catalogue
+//               </Link>
+//             </motion.div>
+//           </div>
+
+//           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+//             {[
+//               { title: "SUNVET-DF", sub: "Sulphur 80% WDG", desc: "Water dispersible granules containing 80% Sulphur as active ingredient." },
+//               { title: "COSMIC FERTILE", sub: "Sulphur 90% WDG", desc: "Improves nutrient uptake, photosynthesis and healthy crop growth." },
+//               { title: "DUOCARE", sub: "Sulphur 65% + Tebuconazole 10%", desc: "Effective fungicide with protective, curative and eradicative action." }
+//             ].map((prod, i) => (
+//               <motion.div variants={fadeUp} key={i} className="group flex flex-col items-center text-center">
+//                 <div className="w-full aspect-[4/5] bg-white rounded-2xl mb-8 relative overflow-hidden flex items-center justify-center p-12 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-slate-200/50 cursor-pointer">
+//                    <div className="w-full h-full bg-[url('/images/hero-bg.png')] bg-contain bg-center bg-no-repeat group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-multiply opacity-80"></div>
+//                 </div>
+//                 <h3 className="text-xl font-semibold text-slate-900 mb-2">{prod.title}</h3>
+//                 <p className="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-4">{prod.sub}</p>
+//                 <p className="text-slate-500 font-light text-sm leading-relaxed max-w-xs">{prod.desc}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </motion.div>
+//       </section>
+//     </main>
+//   );
+// }
+
+"use client";
+
+import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+// ---------------------------------------------------
+// SUPER HEAVY AWWWARDS ANIMATION VARIANTS
+// ---------------------------------------------------
+const transitionLux = { duration: 1.4, ease: [0.16, 1, 0.3, 1] };
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0, transition: transitionLux }
+};
+
+const fadeUpSlow = {
+  hidden: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.8, ease: [0.16, 1, 0.3, 1] } }
+};
+
+const maskUp = {
+  hidden: { y: "120%", rotate: 2 },
+  visible: { y: "0%", rotate: 0, transition: transitionLux }
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: { opacity: 1, scale: 1, transition: transitionLux }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+  }
+};
+
+const staggerMask = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
+};
 
 export default function Home() {
+  // Global & Local Scroll References for Parallax
+  const { scrollYProgress: globalScroll } = useScroll();
+  const heroBgY = useTransform(globalScroll, [0, 1], ["0%", "40%"]);
+  const heroBgScale = useTransform(globalScroll, [0, 1], [1, 1.15]);
+
+  const whyChooseRef = useRef(null);
+  const { scrollYProgress: whyChooseScroll } = useScroll({ target: whyChooseRef, offset: ["start end", "end start"] });
+  const card1Y = useTransform(whyChooseScroll, [0, 1], ["20%", "-20%"]);
+  const card2Y = useTransform(whyChooseScroll, [0, 1], ["-10%", "30%"]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="min-h-screen bg-[#FDFDFD] selection:bg-emerald-200 selection:text-emerald-900 overflow-x-hidden">
+      
+      {/* Loading Curtain Reveal */}
+      <motion.div 
+        initial={{ y: 0 }}
+        animate={{ y: "-100%" }}
+        transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
+        className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center pointer-events-none"
+      />
+
+      {/* 1. HERO SECTION (Heavy Parallax Background) */}
+      <section className="relative w-full min-h-[90vh] flex flex-col justify-center px-6 lg:px-12 py-24 lg:py-0 border-b border-slate-100 overflow-hidden">
+        <motion.div 
+          style={{ y: heroBgY, scale: heroBgScale }}
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 w-full h-[120%] -top-[10%] bg-[url('/images/hero-bg.png')] bg-cover bg-center bg-no-repeat"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
+          <motion.div 
+            variants={staggerMask}
+            initial="hidden"
+            animate="visible"
+            className="max-w-2xl flex flex-col items-start text-left pt-12 lg:pt-0"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <motion.div variants={scaleIn} className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-md mb-8 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+              <span className="text-[10px] font-bold text-emerald-950 tracking-[0.25em] uppercase">Premium Formulations</span>
+            </motion.div>
+
+            <h1 className="text-6xl md:text-7xl lg:text-[6rem] font-medium tracking-tighter text-slate-900 mb-6 leading-[1] flex flex-col">
+              <div className="overflow-hidden pb-2"><motion.span variants={maskUp} className="block">Engineered</motion.span></div>
+              <div className="overflow-hidden pb-4"><motion.span variants={maskUp} className="block text-emerald-800 italic font-light tracking-tight pr-2">Sulphur.</motion.span></div>
+            </h1>
+            
+            <motion.p variants={fadeUp} className="text-lg text-slate-700 font-light max-w-md mb-12 leading-relaxed">
+              High-purity, scientifically formulated solutions driving the foundation of global agriculture and heavy manufacturing.
+            </motion.p>
+            
+            <motion.div variants={fadeUp} className="flex items-center gap-6">
+              <Link href="/products" className="group flex items-center justify-center w-16 h-16 bg-emerald-900 text-white rounded-full hover:bg-emerald-800 hover:scale-105 transition-all duration-500 shadow-xl shadow-emerald-900/20">
+                <svg className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </Link>
+              <span className="text-sm font-semibold tracking-wide text-slate-900 uppercase">Explore Products</span>
+            </motion.div>
+          </motion.div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* 2. ABOUT US (Staggered Masks & Hover Kinetics) */}
+      <section className="py-32 px-6 lg:px-12 bg-white relative overflow-hidden">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerMask}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 tracking-tight max-w-3xl leading-[1.1] flex flex-wrap gap-x-3 overflow-hidden pb-2">
+              <motion.span variants={maskUp}>Over</motion.span> 
+              <motion.span variants={maskUp}>Two</motion.span> 
+              <motion.span variants={maskUp}>Decades</motion.span> 
+              <motion.span variants={maskUp}>of</motion.span> 
+              <motion.span variants={maskUp} className="font-semibold text-emerald-900">Innovation,</motion.span> 
+              <motion.span variants={maskUp} className="font-semibold text-emerald-900">Quality</motion.span> 
+              <motion.span variants={maskUp} className="font-semibold text-emerald-900">& Trust.</motion.span>
+            </h2>
+            <motion.div variants={fadeUp}>
+              <Link href="/about" className="group text-xs font-bold tracking-[0.2em] uppercase text-slate-400 hover:text-emerald-700 transition-colors flex items-center gap-2">
+                Our Story <span className="block w-8 h-[1px] bg-slate-300 group-hover:bg-emerald-700 group-hover:w-12 transition-all duration-500"></span>
+              </Link>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-24 gap-x-12">
+            {[
+              { title: "Empower Farmers", desc: "Guiding cultivators to increase crop yields while promoting awareness of advanced, sustainable protection practices." },
+              { title: "Customer-Centric", desc: "Delivering absolute service excellence by providing customized, scientifically-backed solutions tailored strictly to client requirements." },
+              { title: "Long-Term Vision", desc: "Building unbreakable partnerships with suppliers, distributors, and global stakeholders through uncompromising reliability." },
+              { title: "Pioneering Protection", desc: "Developing innovative, effective, and sustainable compounds that actively contribute to modern agricultural growth." }
+            ].map((item, i) => (
+              <motion.div variants={fadeUpSlow} key={i} className="relative group pl-8 border-l border-slate-200 hover:border-emerald-500 transition-colors duration-700">
+                <motion.span 
+                  className="absolute -top-12 -left-4 text-[8rem] font-bold text-slate-50/80 transition-colors duration-700 select-none z-0 group-hover:text-emerald-50/80"
+                  whileHover={{ scale: 1.1, rotate: -2 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                >
+                  0{i+1}
+                </motion.span>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-semibold text-slate-900 mb-4">{item.title}</h3>
+                  <p className="text-slate-500 font-light leading-relaxed max-w-sm">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 3. WHY CHOOSE US (Opposing Scroll Parallax on Cards) */}
+      <section ref={whyChooseRef} className="py-32 px-6 lg:px-12 bg-[#F7F9F6] relative border-y border-slate-100 overflow-hidden">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center"
+        >
+          <div className="lg:w-5/12 z-10">
+            <motion.span variants={fadeUp} className="text-[10px] font-bold tracking-[0.25em] text-emerald-600 uppercase mb-6 block">Why Yogleela</motion.span>
+            <div className="overflow-hidden pb-4">
+              <motion.h2 variants={maskUp} className="text-5xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-8">
+                Delivering <span className="text-emerald-800 italic font-light pr-2">Absolute</span> Quality for Industry.
+              </motion.h2>
+            </div>
+            <motion.p variants={fadeUp} className="text-slate-600 font-light text-lg leading-relaxed mb-10">
+              Since 2002, we have redefined sulphur manufacturing. Backed by advanced R&D and modern facilities, we formulate solutions that drive global markets without compromise.
+            </motion.p>
+            <motion.div variants={fadeUp}>
+              <Link href="/contact" className="inline-flex items-center gap-3 text-sm font-semibold text-slate-900 hover:text-emerald-700 transition-colors group">
+                Partner with us 
+                <span className="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center group-hover:border-emerald-600 group-hover:bg-emerald-50 transition-all duration-500 ease-[0.16,1,0.3,1]">
+                  <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </span>
+              </Link>
+            </motion.div>
+          </div>
+          
+          <div className="lg:w-7/12 relative w-full h-[600px] perspective-[1000px]">
+            {/* Parallax Card 1 */}
+            <motion.div style={{ y: card1Y }} className="absolute top-0 right-0 w-3/4 h-[400px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 z-20 group">
+              <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 1.5, ease: [0.16,1,0.3,1] }} className="absolute inset-0 w-full h-full">
+                <div className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center"></div>
+              </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-8 left-8 right-8 text-white pointer-events-none">
+                <span className="text-6xl font-semibold tracking-tighter block mb-2">80<span className="text-3xl text-emerald-400">%</span></span>
+                <span className="text-sm font-light tracking-wide text-emerald-100 uppercase">Process Efficiency</span>
+              </div>
+            </motion.div>
+
+            {/* Parallax Card 2 */}
+            <motion.div style={{ y: card2Y }} className="absolute bottom-0 left-0 w-3/4 h-[350px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 z-10 group">
+              <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 1.5, ease: [0.16,1,0.3,1] }} className="absolute inset-0 w-full h-full">
+                <div className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center"></div>
+              </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-8 left-8 right-8 text-white pointer-events-none">
+                <span className="text-6xl font-semibold tracking-tighter block mb-2">50<span className="text-3xl text-slate-400">%</span></span>
+                <span className="text-sm font-light tracking-wide text-slate-300 uppercase">Farm Yield Growth</span>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 4. TRUST BENTO GRID (Deep Scale & Floating Orbs) */}
+      <section className="py-32 px-6 lg:px-12 bg-[#02130A] text-white overflow-hidden">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerMask}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="mb-20">
+            <motion.span variants={fadeUp} className="text-[10px] font-bold tracking-[0.25em] text-emerald-500 uppercase mb-6 block">The Standard</motion.span>
+            <div className="overflow-hidden pb-4">
+              <motion.h2 variants={maskUp} className="text-4xl md:text-6xl font-light tracking-tight leading-[1.1] max-w-2xl">
+                Trusted solutions backed by <span className="font-semibold text-white">innovation.</span>
+              </motion.h2>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { title: "Advanced Manufacturing", colSpan: "lg:col-span-2" },
+              { title: "Research & Development", colSpan: "lg:col-span-1" },
+              { title: "Crop Protection", colSpan: "lg:col-span-2" },
+              { title: "Industrial Applications", colSpan: "lg:col-span-3" },
+              { title: "Customer-First", colSpan: "lg:col-span-2" }
+            ].map((item, i) => (
+              <motion.div variants={scaleIn} key={i} className={`${item.colSpan} relative h-48 rounded-2xl bg-white/5 border border-white/10 p-8 flex flex-col justify-end group hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-700 overflow-hidden`}>
+                <motion.div 
+                  animate={{ 
+                    scale: [1, 1.2, 1], 
+                    x: [0, 20, 0],
+                    y: [0, -20, 0]
+                  }}
+                  transition={{ duration: 6 + i, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/30 transition-all duration-700" 
+                />
+                <span className="text-emerald-500/50 font-bold text-sm mb-auto">0{i+1}</span>
+                <h3 className="font-medium text-lg text-white/90 tracking-wide z-10 group-hover:text-emerald-300 transition-colors duration-500">{item.title}</h3>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 5. INDUSTRIES (Staggered Row Reveals) */}
+      <section className="py-32 px-6 lg:px-12 bg-white">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerMask}
+          className="max-w-7xl mx-auto"
+        >
+          <motion.div variants={fadeUp} className="mb-24 overflow-hidden pb-4">
+            <motion.h2 variants={maskUp} className="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-[1.1]">
+              Powering Diverse Industries.
+            </motion.h2>
+          </motion.div>
+
+          <div className="flex flex-col border-t border-slate-200">
+            {[
+              { title: "Farming", desc: "Improving soil fertility, crop nutrition, and overall agricultural productivity.", link: "/products" },
+              { title: "Rubber & Tyre", desc: "Essential for vulcanization, improving the strength and elasticity of rubber.", link: "/sulphur-powder-rubber-tyre-grade-microfine-grade" },
+              { title: "Pharmaceutical", desc: "Pharma-grade sulphur strictly regulated for dermatological formulations.", link: "/sulphur-amlasar" },
+              { title: "Explosives", desc: "Industrial sulphur utilized in the production of specialized formulations.", link: "/sulphur-powder" },
+              { title: "Sugar Refining", desc: "Crucial during sugar processing to improve purification and color control.", link: "/sulphur-rock-granules-pallets" }
+            ].map((ind, i) => (
+              <motion.div variants={fadeUpSlow} key={i}>
+                <Link href={ind.link} className="group flex flex-col lg:flex-row items-start lg:items-center justify-between py-10 border-b border-slate-200 hover:px-6 hover:bg-slate-50 transition-all duration-700 ease-[0.16,1,0.3,1]">
+                  <div className="w-full lg:w-1/3 mb-6 lg:mb-0 transform group-hover:translate-x-4 transition-transform duration-700 ease-[0.16,1,0.3,1]">
+                    <h3 className="text-3xl font-light text-slate-900 group-hover:text-emerald-800 transition-colors">{ind.title}</h3>
+                  </div>
+                  
+                  <div className="w-full lg:w-1/3 mb-6 lg:mb-0 px-0 lg:px-8 transform group-hover:translate-x-2 transition-transform duration-700 delay-75 ease-[0.16,1,0.3,1]">
+                    <p className="text-slate-500 font-light text-sm leading-relaxed">{ind.desc}</p>
+                  </div>
+                  
+                  <div className="w-full lg:w-1/3 flex items-center justify-end gap-8">
+                    <div className="w-32 h-16 rounded-full bg-slate-200 overflow-hidden relative opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-[0.16,1,0.3,1] hidden md:block">
+                       <div className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center"></div>
+                    </div>
+                    <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-emerald-300 group-hover:bg-emerald-50 transition-colors duration-500">
+                      <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-700 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 6. FEATURED PRODUCTS (3D Hover & Staggered Reveal) */}
+      <section className="py-32 px-6 lg:px-12 bg-[#F9FAFA]">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerMask}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="flex justify-between items-end mb-20 overflow-hidden pb-4">
+            <motion.h2 variants={maskUp} className="text-4xl md:text-5xl font-light text-slate-900 tracking-tight leading-[1.1]">
+              Trusted <span className="font-semibold text-emerald-900">Formulations.</span>
+            </motion.h2>
+            <motion.div variants={fadeUp}>
+              <Link href="/products" className="text-xs font-bold tracking-[0.2em] uppercase text-emerald-700 hover:text-slate-900 transition-colors hidden md:block">
+                View Catalogue
+              </Link>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 perspective-[1000px]">
+            {[
+              { title: "SUNVET-DF", sub: "Sulphur 80% WDG", desc: "Water dispersible granules containing 80% Sulphur as active ingredient." },
+              { title: "COSMIC FERTILE", sub: "Sulphur 90% WDG", desc: "Improves nutrient uptake, photosynthesis and healthy crop growth." },
+              { title: "DUOCARE", sub: "Sulphur 65% + Tebuconazole 10%", desc: "Effective fungicide with protective, curative and eradicative action." }
+            ].map((prod, i) => (
+              <motion.div variants={fadeUpSlow} key={i} className="group flex flex-col items-center text-center">
+                <motion.div 
+                  whileHover={{ y: -10, rotateX: 5, rotateY: -5 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="w-full aspect-[4/5] bg-white rounded-2xl mb-8 relative overflow-hidden flex items-center justify-center p-12 shadow-sm group-hover:shadow-2xl group-hover:shadow-emerald-900/10 cursor-pointer"
+                >
+                   <motion.div 
+                     whileHover={{ scale: 1.15 }}
+                     transition={{ duration: 1.2, ease: [0.16,1,0.3,1] }}
+                     className="w-full h-full bg-[url('/images/hero-bg.png')] bg-contain bg-center bg-no-repeat mix-blend-multiply opacity-80" 
+                   />
+                </motion.div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">{prod.title}</h3>
+                <p className="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-4">{prod.sub}</p>
+                <p className="text-slate-500 font-light text-sm leading-relaxed max-w-xs">{prod.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+    </main>
   );
 }
