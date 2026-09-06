@@ -1,62 +1,90 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#031207] text-white pt-24 pb-12 px-6 lg:px-12 border-t border-emerald-900/50">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+    <footer className="bg-[#0B2B1C] text-[#F7F3E8] pt-16 md:pt-24 pb-8 md:pb-12 px-6 lg:px-12 border-t-4 border-[#F5C518] relative z-[50]">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-16 lg:gap-8 mb-16">
         
-        {/* Brand & About Column */}
-        <div className="md:col-span-5">
-          <Link href="/" className="text-2xl font-extrabold tracking-tight text-white mb-6 block">
-            YOGLEELA <span className="text-emerald-500 font-semibold">SULPHUR</span>
-          </Link>
-          <p className="text-emerald-100/70 font-medium text-sm leading-relaxed mb-6 max-w-sm">
-            Rooted in oneness and divine creation. We cater to farmers, dealers, and corporate industries across rubber, sugar, explosives, and pharmaceuticals with absolute purity.
+        {/* BRAND & DESCRIPTION */}
+        <div className="lg:w-5/12 flex flex-col items-start">
+          <h3 className="text-2xl md:text-3xl font-black text-white mb-6 tracking-tight">
+            Yogleela Sulphur and Agchem Industries Pvt. Ltd.
+          </h3>
+          <p className="text-[18px] font-medium text-[#F7F3E8]/80 leading-relaxed max-w-md mb-8">
+            We manufacture sulphur formulations for agriculture, rubber and tyre, pharmaceuticals, explosives and sugar, supplying dealers, distributors and industrial buyers across India and overseas.
           </p>
-          <Link href="/about" className="inline-flex items-center text-emerald-400 font-bold text-sm hover:text-white transition-colors">
-            Read Our Full Story ↗
-          </Link>
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm bg-[#1F2A24] border border-[#2E7D4F]/50 shadow-lg mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#F5C518] animate-pulse"></span>
+            <span className="text-xs font-bold text-[#F5C518] tracking-[0.2em] uppercase">ISO 9001:2015 certified.</span>
+          </div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link href="/about" className="text-[#2E7D4F] text-[15px] font-bold tracking-widest uppercase hover:text-[#F5C518] transition-colors border-b-2 border-transparent hover:border-[#F5C518]">
+              [ Read our story ]
+            </Link>
+          </motion.div>
         </div>
 
-        {/* Quick Links */}
-        <div className="md:col-span-3">
-          <h4 className="text-emerald-500 font-bold tracking-widest text-xs uppercase mb-6">Quick Links</h4>
-          <ul className="space-y-4">
-            <li><Link href="/" className="text-emerald-100/70 font-medium text-sm hover:text-white transition-colors">Home</Link></li>
-            <li><Link href="/about" className="text-emerald-100/70 font-medium text-sm hover:text-white transition-colors">About Us</Link></li>
-            <li><Link href="/products" className="text-emerald-100/70 font-medium text-sm hover:text-white transition-colors">Products</Link></li>
-            <li><Link href="/Infrastructure" className="text-emerald-100/70 font-medium text-sm hover:text-white transition-colors">Infrastructure</Link></li>
-            <li><Link href="/contact" className="text-emerald-100/70 font-medium text-sm hover:text-white transition-colors">Contact Us</Link></li>
-          </ul>
-        </div>
-
-        {/* Contact Info */}
-        <div className="md:col-span-4">
-          <h4 className="text-emerald-500 font-bold tracking-widest text-xs uppercase mb-6">Office Address</h4>
-          <p className="text-emerald-100/70 font-medium text-sm leading-relaxed mb-8">
-            B 104 Raj Heights, MG Road,<br />
-            Kandivali West, Mumbai 400067
-          </p>
+        {/* NAVIGATION & CONTACT LINKS */}
+        <div className="lg:w-7/12 flex flex-col sm:flex-row justify-between lg:justify-end gap-12 lg:gap-24">
           
-          <h4 className="text-emerald-500 font-bold tracking-widest text-xs uppercase mb-4">Call Us</h4>
-          <p className="text-emerald-100/70 font-medium text-sm mb-8">
-            +91 9930993051 / +91 9920306668<br />
-            +91 9821252090 / +91 9920878518
-          </p>
+          <div className="flex flex-col gap-5">
+            <h4 className="text-[#F5C518] font-bold tracking-widest text-sm uppercase mb-2">Company</h4>
+            <Link href="/" className="font-bold text-lg hover:text-[#F5C518] transition-colors inline-flex items-center gap-3 group">
+              <span className="w-4 h-[2px] bg-[#2E7D4F] group-hover:bg-[#F5C518] transition-colors"></span>
+              Home
+            </Link>
+            <Link href="/about" className="font-bold text-lg hover:text-[#F5C518] transition-colors inline-flex items-center gap-3 group">
+              <span className="w-4 h-[2px] bg-[#2E7D4F] group-hover:bg-[#F5C518] transition-colors"></span>
+              About Us
+            </Link>
+            <Link href="/products" className="font-bold text-lg hover:text-[#F5C518] transition-colors inline-flex items-center gap-3 group">
+              <span className="w-4 h-[2px] bg-[#2E7D4F] group-hover:bg-[#F5C518] transition-colors"></span>
+              Products
+            </Link>
+            <Link href="/Infrastructure" className="font-bold text-lg hover:text-[#F5C518] transition-colors inline-flex items-center gap-3 group">
+              <span className="w-4 h-[2px] bg-[#2E7D4F] group-hover:bg-[#F5C518] transition-colors"></span>
+              Infrastructure
+            </Link>
+            <Link href="/career" className="font-bold text-lg hover:text-[#F5C518] transition-colors inline-flex items-center gap-3 group">
+              <span className="w-4 h-[2px] bg-[#2E7D4F] group-hover:bg-[#F5C518] transition-colors"></span>
+              Careers
+            </Link>
+          </div>
 
-          <h4 className="text-emerald-500 font-bold tracking-widest text-xs uppercase mb-4">Email Us</h4>
-          <p className="text-emerald-100/70 font-medium text-sm">
-            sales@yogleelasulphur.com
-          </p>
+          <div className="flex flex-col gap-5">
+            <h4 className="text-[#F5C518] font-bold tracking-widest text-sm uppercase mb-2">Get in Touch</h4>
+            <a href="mailto:yogleelasulphur@gmail.com" className="font-bold text-[17px] hover:text-[#F5C518] transition-colors">
+              yogleelasulphur@gmail.com
+            </a>
+            <a href="mailto:sales@yogleelasulphur.com" className="font-bold text-[17px] hover:text-[#F5C518] transition-colors">
+              sales@yogleelasulphur.com
+            </a>
+            <a href="tel:+919821252090" className="font-bold text-[17px] hover:text-[#F5C518] transition-colors">
+              Call: +91 98212 52090
+            </a>
+            <a href="tel:+919930993051" className="font-bold text-[17px] hover:text-[#F5C518] transition-colors hidden md:block">
+              Call: +91 99309 93051
+            </a>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mt-4 inline-block w-max">
+              <Link href="/contact" className="px-8 py-3 bg-[#2E7D4F] text-white text-sm font-bold rounded-sm hover:bg-[#1F2A24] border border-[#2E7D4F] hover:border-[#F5C518] hover:text-[#F5C518] transition-all shadow-lg block">
+                [ Send an Enquiry ]
+              </Link>
+            </motion.div>
+          </div>
         </div>
+
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-8 border-t border-emerald-900/50">
-        <h2 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-0">
-          Yogleela Sulphur and Agchem Industries Pvt. Ltd.
-        </h2>
-        <p className="text-emerald-100/50 text-xs font-medium">
-          © Copyright 2026. All rights reserved.
+      {/* BOTTOM COPYRIGHT */}
+      <div className="max-w-7xl mx-auto border-t border-[#F7F3E8]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <p className="text-[13px] font-medium text-[#F7F3E8]/50">
+          © {new Date().getFullYear()} Yogleela Sulphur and Agchem Industries Pvt. Ltd. All Rights Reserved.
+        </p>
+        <p className="text-[13px] font-medium text-[#F7F3E8]/50">
+          Manufacturing plant at Vapi, Gujarat. Offices in Mumbai.
         </p>
       </div>
     </footer>

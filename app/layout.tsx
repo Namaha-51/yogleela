@@ -5,11 +5,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Yogleela Sulphur",
-  description: "Premium Sulphur Products for Industry & Agriculture",
-};
+export const metadata = {
+  title: "Sulphur Manufacturer in India | Yogleela Sulphur & Agchem",
+  description: "ISO 9001:2015 certified sulphur manufacturer in India. Sulphur 80% WDG, 85% DP, WP and rubber, pharma and explosive grade powder. Plant at Vapi, Gujarat."
+};  
 
 export default function RootLayout({
   children,
