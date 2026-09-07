@@ -20,9 +20,12 @@ export default function Footer() {
             <span className="w-2 h-2 rounded-full bg-[#F5C518] animate-pulse"></span>
             <span className="text-xs font-bold text-[#F5C518] tracking-[0.2em] uppercase">ISO 9001:2015 certified.</span>
           </div>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/about" className="text-[#2E7D4F] text-[15px] font-bold tracking-widest uppercase hover:text-[#F5C518] transition-colors border-b-2 border-transparent hover:border-[#F5C518]">
-              [ Read our story ]
+          
+          {/* UPDATED: Removed brackets, added an arrow, and styled as a clean interactive link */}
+          <motion.div whileHover={{ scale: 1.05, x: 5 }} whileTap={{ scale: 0.95 }}>
+            <Link href="/about" className="group inline-flex items-center gap-3 text-[#2E7D4F] text-sm font-bold tracking-[0.15em] uppercase hover:text-[#F5C518] transition-colors">
+              Read Our Story
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </Link>
           </motion.div>
         </div>
@@ -68,9 +71,11 @@ export default function Footer() {
             <a href="tel:+919930993051" className="font-bold text-[17px] hover:text-[#F5C518] transition-colors hidden md:block">
               Call: +91 99309 93051
             </a>
+            
+            {/* UPDATED: Removed brackets, improved padding and contrast for a bolder CTA */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mt-4 inline-block w-max">
-              <Link href="/contact" className="px-8 py-3 bg-[#2E7D4F] text-white text-sm font-bold rounded-sm hover:bg-[#1F2A24] border border-[#2E7D4F] hover:border-[#F5C518] hover:text-[#F5C518] transition-all shadow-lg block">
-                [ Send an Enquiry ]
+              <Link href="/contact" className="px-8 py-3.5 bg-[#2E7D4F] text-white text-[15px] font-bold tracking-wide rounded-sm hover:bg-[#F5C518] hover:text-[#0B2B1C] transition-all shadow-lg block text-center">
+                Send an Enquiry
               </Link>
             </motion.div>
           </div>

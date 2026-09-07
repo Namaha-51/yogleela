@@ -119,7 +119,34 @@ export default function Infrastructure() {
           </div>
         </motion.div>
       </section>
+{/* MAP SECTION: VAPI PLANT LOCATION */}
+      <section className="py-20 md:py-32 px-6 lg:px-12 bg-white border-t border-[#0B2B1C]/10">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="max-w-7xl mx-auto">
+          
+          <motion.div variants={fadeUp} className="mb-12 flex flex-col items-center text-center">
+            <span className="text-[#2E7D4F] font-bold tracking-widest text-sm uppercase mb-4 block">Our Location</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0B2B1C] tracking-tight">Visit the Plant in Vapi</h2>
+            <p className="text-xl text-[#1F2A24] font-medium mt-6 max-w-2xl">
+              Strategically located in Gujarat's premier industrial hub to ensure seamless domestic distribution and global export routing.
+            </p>
+          </motion.div>
 
+          <motion.div variants={fadeUp} className="w-full h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl border-8 border-[#F7F3E8]">
+            <iframe 
+              src="https://maps.google.com/maps?q=Yogleela+Sulphur+And+Agchem+Industries+Private+Limited,+Vapi&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Yogleela Sulphur Plant Location, Vapi, Gujarat"
+              className="grayscale-[20%] contrast-[1.1] hover:grayscale-0 transition-all duration-700"
+            ></iframe>
+          </motion.div>
+          
+        </motion.div>
+      </section>
     </main>
   );
 }
