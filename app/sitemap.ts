@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-
+export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.yogleelasulphur.com' // Update if your domain is different
   
