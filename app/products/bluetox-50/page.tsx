@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import ProductCTA from "@/app/components/ProductCTA";
 import { motion } from 'framer-motion';
 
 export default function BluetoxPage() {
@@ -41,13 +42,13 @@ export default function BluetoxPage() {
       <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
         <div className="mb-16">
           <p className="text-xl font-medium text-[#1F2A24] mb-6 leading-relaxed">
-            It is highly effective fungicide based on copper oxy chloride containing 50% w/w copper content and balance adjuvats[cite: 14].
+            It is highly effective fungicide based on copper oxy chloride containing 50% w/w copper content and balance adjuvants.
           </p>
         </div>
 
         <div className="mb-16 overflow-x-auto">
           <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Recommendation</h4>
-          <table className="w-full border-collapse bg-[#F7F3E8] rounded-xl overflow-hidden shadow-md text-left mt-4">
+          <table className="w-full border-collapse bg-[#F7F3E8] rounded-xl overflow-hidden shadow-md text-left mt-4 min-w-[700px]">
             <thead className="bg-[#0B2B1C] text-white">
               <tr>
                 <th className="p-4 font-bold text-sm uppercase tracking-wider">Crop(s)</th>
@@ -63,10 +64,14 @@ export default function BluetoxPage() {
                 ["Betel", "Leaf Spot / Fruit Rot", "1.25", "2.50", "750-1000"],
                 ["Chillies", "Leaf Spot / Fruit Rot", "1.25", "2.50", "750-1000"],
                 ["Citrus", "Canker / Foot Rot", "1.25", "2.50", "750-1000"],
-                ["Cardamom", "Clump Rot / Leaf Rot", "1.87-3.75", "3.75-5.5", "750-1000"],
+                ["Cardamom", "Clump Rot", "1.87-3.75", "3.75-5.5", "750-1000"],
+                ["Cardamom", "Leaf Rot", "1.25", "2.50", "750-1000"],
                 ["Cumin Paddy", "Blight / Brown Leaf Spot", "1.25", "2.5", "750-1000"],
-                ["Tea", "Blister Bright / Black Rot / Red Rust", "0.21-0.30", "0.42-0.60", "125-175"],
-                ["Tomato", "Early Bright / Late Bright / Leaf Spot", "1.25", "2.50", "750-1000"],
+                ["Coconut Potato", "Bud Rot / Early Blight", "1.25", "2.50", "750-1000"],
+                ["Tea", "Blister Blight", "0.21", "0.42", "175"],
+                ["Tea", "Black Rot / Red Rust", "0.30", "0.60", "125"],
+                ["Tobacco", "Frog Eye Leaf / Black Shank / Downy Mildew", "1.25", "2.50", "750-1000"],
+                ["Tomato", "Early Blight / Late Blight / Leaf Spot", "1.25", "2.50", "750-1000"],
                 ["Grapes", "Downy Mildew", "1.50-2.00", "1.875-2.50", "750-1000"]
               ].map((row, i) => (
                 <tr key={i} className="hover:bg-white transition-colors">
@@ -83,19 +88,81 @@ export default function BluetoxPage() {
           <div>
             <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Time of Application</h4>
             <p className="text-lg font-medium leading-relaxed">
-              For the best results apply prophyllaticallyt i.e. before disease attack plants, in rain weather spraying must be repeated at shorter intervals[cite: 14].
+              For the best results apply prophylactically i.e. before disease attack plants, in rainy weather spraying must be repeated at shorter intervals.
             </p>
           </div>
-          
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Direction of Use</h4>
+            <p className="text-lg font-medium leading-relaxed">
+              Knapsack sprayer, foot sprayer, compression knapsack sprayer, compression knapsack battery sprayer and ASPEE-HTP power sprayer. Do not use on fruit trees without addition of shafeners e.g. cotton seed oil to avoid leaf and scorch and re setting.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Precautions</h4>
+            <ul className="space-y-3">
+              {[
+                "Keep away from foodstuffs, empty foodstuff containers and animal food",
+                "Avoid contact with mouth, eyes and skin",
+                "Avoid inhalation of the spray mist. Spray in the direction of wind",
+                "Wash thoroughly the contaminated clothes and parts of the body after spraying",
+                "Do not smoke, drink, eat and chew anything while spraying.",
+                "Wear full protective clothing while mixing and spraying."
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                  <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Phytotoxicity</h4>
+            <p className="text-lg font-medium leading-relaxed">The product is not phytotoxic when used as per field recommendation.</p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Symptoms of Poisoning</h4>
-              <p className="text-lg font-medium leading-relaxed">Nausea, vomiting, headache and irritation to the bronchi, eyes and lungs may occur[cite: 14].</p>
+              <p className="text-lg font-medium leading-relaxed">Nausea, vomiting, headache and irritation to the bronchi, eyes and lungs may occur.</p>
             </div>
             <div>
               <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Antidote</h4>
-              <p className="text-lg font-medium leading-relaxed">Empty stomach by gastric lavage with milk or preferable solution. of Potassium ferrocyanide. Administer egg white and other demulscents[cite: 14].</p>
+              <p className="text-lg font-medium leading-relaxed">
+                Empty stomach by gastric lavage with milk or preferable solution of Potassium ferrocyanide. Administer egg white and other demulscents. Maintain electrolyte and fluid balance Morphine and Pethidine may be given to control pain. If symptoms persists, give dimercaprol or penicillamine. Penicillamine may be given in the dose of 10-40 mg/kg/day (max. 1-2 gm/day divided into four doses) for five days. Dimercaprol is given in the dose of 3mg/kg every four hours for first four days and 2 mg/kg every 12 hours for a total of 10 days by intravenous route. Give within first four hours of poisoning to obtain maximum benefit.
+              </p>
             </div>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">First Aid</h4>
+            <ul className="space-y-3">
+              {[
+                "If swallowed, induce vomiting by tickling the back of throat. Repeat it until the vomitus is clear. Do not induce vomiting if the patient is unconscious",
+                "If clothing and skin are contaminated, remove the clothes and wash the contaminated skin with copious amount of soap and water.",
+                "If eyes are contaminated, flush with plenty of saline/clean water for about 10 to 15 minutes.",
+                "If inhaled, remove the patient to fresh air."
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                  <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Storage Conditions</h4>
+            <ul className="space-y-3">
+              {[
+                "The packages containing the fungicide shall be stored in separate rooms or premises away from the rooms or premises used for storing other articles of or shall be kept in separate almirahs under lock and key depend upon the quantity and nature of the fungicide.",
+                "The rooms or premises meant for storing the fungicide shall be well-lit and ventilated and of sufficient dimensions."
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                  <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <p className="text-xs text-[#1F2A24]/60 italic mt-8 border-t border-[#0B2B1C]/10 pt-4">
@@ -104,13 +171,7 @@ export default function BluetoxPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in BLUETOX 50?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+      <ProductCTA productName="BLUETOX 50 (Copper Oxychloride 50%)" />
     </main>
   );
 }

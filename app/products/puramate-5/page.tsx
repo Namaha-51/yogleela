@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ProductCTA from "@/app/components/ProductCTA";
+
 
 export default function Puramate5Page() {
   return (
@@ -29,7 +31,7 @@ export default function Puramate5Page() {
          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="md:w-1/2 flex justify-center md:justify-end">
             <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg h-72 md:h-[400px] flex items-center justify-center">
               <img 
-                src="/images/puramate.png" 
+                src="/images/puremate.png" 
                 alt="puramate" 
                 className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:scale-105 transition-transform duration-700" 
               />
@@ -38,7 +40,7 @@ export default function Puramate5Page() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
+     <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
         <div className="space-y-12">
           
           <div>
@@ -68,19 +70,25 @@ export default function Puramate5Page() {
               <p className="text-lg font-medium leading-relaxed">Early symptoms of poisoning may be a combination of dilation of pupils, muscular in coordination, ataxia and muscle tremors.</p>
             </div>
             <div>
-              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Phytotoxicity</h4>
-              <p className="text-lg font-medium leading-relaxed">Early symptoms may be a combination of dilation of pupils, muscular in coordination, ataxia and muscle tremors.</p>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Antidote</h4>
+              <p className="text-lg font-medium leading-relaxed">No specific antidote. Treat symptomatically.</p>
             </div>
           </div>
 
-          <div>
-            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">First Aid</h4>
-            <p className="text-lg font-medium leading-relaxed mb-4">
-              Remove the affected person to as well ventilated area or fresh air and protect him from under cooling. Remove contaminated clothing and patient one or two glasses of water, if able to swallow. Do not induce vomiting. Get the attention of the medical doctor immediately.
-            </p>
-            <p className="text-lg font-bold text-[#8E1B1B] leading-relaxed">
-              Note: Do not induce vomiting or never give anything by mouth to an unconscious person.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Phytotoxicity</h4>
+              <p className="text-lg font-medium leading-relaxed">Early symptoms may be a combination of dilation of pupils, muscular in coordination, ataxia and muscle tremors.</p>
+            </div>
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">First Aid</h4>
+              <p className="text-lg font-medium leading-relaxed mb-4">
+                Remove the affected person to a well ventilated area or fresh air and protect him from under cooling. Remove contaminated clothing and give patient one or two glasses of water, if able to swallow. Do not induce vomiting. Get the attention of the medical doctor immediately.
+              </p>
+              <p className="text-lg font-bold text-[#8E1B1B] leading-relaxed bg-[#8E1B1B]/10 p-4 rounded-lg">
+                Note: Do not induce vomiting or never give anything by mouth to an unconscious person.
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -103,7 +111,7 @@ export default function Puramate5Page() {
               <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Storage Conditions</h4>
               <ul className="space-y-3">
                 {[
-                  "The package containing the insecticide should be stored in original containers in separate rooms or premises away from food or shall be kept in separate almirahs under lock and key.",
+                  "The package containing the insecticide should be stored in original containers in separate rooms or premises away from the rooms or premises used for storing other articles particularly articles of food or shall be kept in separate almirahs under lock and key.",
                   "The rooms or premises meant for storing the fungicide shall be well built, airy, well lit and ventilated and of sufficient dimension to avoid contamination with vapour.",
                   "The product is toxic to aqua culture & honeybee."
                 ].map((item, i) => (
@@ -121,13 +129,7 @@ export default function Puramate5Page() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in PURAMATE 5?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+      <ProductCTA productName="PuraMate 5 (Emamectin Benzoate 5%)" />
 
     </main>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import ProductCTA from "@/app/components/ProductCTA";
 import { motion } from 'framer-motion';
 
 export default function DuocarePage() {
@@ -41,7 +42,7 @@ export default function DuocarePage() {
       <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
         <div className="mb-16">
           <p className="text-xl font-medium text-[#1F2A24] mb-6 leading-relaxed">
-            Tebuconazole 10% Sulphur 65% WG (water dispersible granule) is a effective fungicide with protective, curative and eradicative action. It controls powdery mildew, fruit rot diseases of Chilli and leaf spot, pod blight disease of Soybean[cite: 11].
+            Tebuconazole 10% Sulphur 65% WG (water dispersible granule) is a effective fungicide with protective, curative and eradicative action. It controls powdery mildew, fruit rot diseases of Chilli and leaf spot, pod blight disease of Soybean.
           </p>
         </div>
 
@@ -60,8 +61,8 @@ export default function DuocarePage() {
             </thead>
             <tbody className="divide-y divide-[#0B2B1C]/10">
               {[
-                ["Chilli", "Powdery Mildew and Fruit Oil", "0.125+0.813", "1.25", "600", "5"],
-                ["Cowpea, Gaur, Pea", "Leaf Spot and Pot Blight", "0.125+0.813", "1.25", "500", "26"],
+                ["Chilli", "Powdery Mildew and Fruit Rot", "0.125+0.813", "1.25", "600", "5"],
+                ["Cowpea, Gaur, Pea", "Leaf Spot and Pod Blight", "0.125+0.813", "1.25", "500", "26"],
               ].map((row, i) => (
                 <tr key={i} className="hover:bg-white transition-colors">
                   {row.map((cell, j) => (
@@ -75,14 +76,23 @@ export default function DuocarePage() {
 
         <div className="space-y-12">
           <div>
-            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Precautions & First Aid</h4>
-            <ul className="space-y-3 mb-6">
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Time of Application</h4>
+            <p className="text-lg font-medium leading-relaxed">
+              Tebuconazole 10% + Sulphur 65% WG is applied with knapsack sprayer at early appearance of disease.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Precautions</h4>
+            <ul className="space-y-3">
               {[
                 "Keep away from foodstuffs, empty foodstuff containers and animal food.",
                 "The user should use appropriate protective clothing like hat, long shirt, long pant and shoes.",
                 "Avoid contact with eyes and skin while handling the product.",
+                "Avoid inhalation.",
                 "Do not drink, eat or smoke during application.",
                 "Remove contaminated clothes and wash before re-use.",
+                "Do not re-use empty containers.",
                 "Wash thoroughly the contaminated clothes & parts of the body with soap and water after work."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-lg font-medium">
@@ -90,27 +100,37 @@ export default function DuocarePage() {
                 </li>
               ))}
             </ul>
-            <p className="text-lg font-medium leading-relaxed">
-              <strong>Symptoms of Poisoning:</strong> Headache, dizziness, weakness, nausea, sore throat, chest pain, lightheadedness, sneezing, coughing and may cause irritation of skin mucous membranes[cite: 11].
-            </p>
-            <p className="text-lg font-medium leading-relaxed mt-4">
-              <strong>First Aid:</strong> If splashed into eyes, wash with plenty of water. Remove contaminated clothing and wash affected parts with soap and water. If the chemical is inhaled, get the victim into fresh air. Do not induce vomiting, Allow the patient to consume 1-2 glass of water[cite: 11].
-            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Symptoms of Poisoning</h4>
+              <p className="text-lg font-medium leading-relaxed">
+                Headache, dizziness, weakness, nausea, sore throat, chest pain, lightheadedness, sneezing, coughing and may cause irritation of skin mucous membranes.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Antidote</h4>
+              <p className="text-lg font-medium leading-relaxed">
+                No specific antidote. Treat symptomatically.
+              </p>
+            </div>
           </div>
           
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">First Aid</h4>
+            <p className="text-lg font-medium leading-relaxed">
+              If splashed into eyes, wash with plenty of water. Remove contaminated clothing and wash affected parts with soap and water. If the chemical is inhaled, get the victim into fresh air. Apply artificial respiration in case of difficult to breathing. Do not give anything by mouth to unconscious persons. If person is conscious rinse the face with water. Do not induce vomiting, Allow the patient to consume 1-2 glass of water. Call the physician immediately.
+            </p>
+          </div>
+
           <p className="text-xs text-[#1F2A24]/60 italic mt-8 border-t border-[#0B2B1C]/10 pt-4">
             WARRANTY: ‘As the usage of the product is not done under our control, we assure our uniform quality of the product only. We don’t take any other responsibility.’
           </p>
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in DUOCARE?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+      <ProductCTA productName="DUOCARE (Sulphur 65%+ Tebuconazole 10% WG)" />
     </main>
   );
 }

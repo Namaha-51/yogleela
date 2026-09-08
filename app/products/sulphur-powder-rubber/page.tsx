@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ProductCTA from "@/app/components/ProductCTA";
+
 
 export default function SulphurRubberPage() {
   return (
@@ -44,14 +46,34 @@ export default function SulphurRubberPage() {
           <div>
             <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Vulcanization & Rubber Manufacturing</h4>
             <p className="text-lg font-medium leading-relaxed mb-4">
-              Rubber is the main raw material used in the manufacturing of tires, and both natural & synthetic rubber is used. In rubber molecules, the cross-linking between the chains is very low, leading to softness. 
+              Rubber is the main raw material used in manufacturing of tires, and both natural & synthetic rubber is used. In rubber molecules the cross linking between the chains are very less. This leads to the softness in the rubber. 
             </p>
             <p className="text-lg font-medium leading-relaxed mb-4">
-              To make the rubber hard, it is treated with sulphur in a process known as <strong>vulcanization</strong>. When sulphur reacts with natural rubber, it increases the cross-linking between the molecules and forms sulphide bonds. 
+              To make the rubber hard, it is treated with sulphur, & this process is known as <strong>vulcanization</strong>. When sulphur reacts with the natural rubber then it increases the cross linking between the molecules in the rubber. It also forms many sulphide bonds. 
             </p>
             <p className="text-lg font-medium leading-relaxed">
-              Due to the formation of these new cross-links, the natural rubber becomes hard. This vulcanized rubber has better elasticity at low as well as at high temperatures. It neither becomes too soft nor brittle.
+              Due to formation of many new cross linking and many sulphide bonds the natural rubber becomes hard. This vulcanized rubber has better elasticity at low as well as at high temperature. It also neither becomes soft nor brittle.
             </p>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Harvesting Process</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-lg font-medium bg-[#F7F3E8] p-4 rounded-xl border border-[#0B2B1C]/5 shadow-sm">
+                <span className="text-[#2E7D4F] mt-1 text-xl">➔</span>
+                <div>
+                  <strong className="block text-[#0B2B1C] mb-1">Cutting the Sloping Inclusion</strong>
+                  <span className="text-[#1F2A24]/80 text-base">The initial step of scoring the rubber tree bark to access the natural latex vessels.</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-3 text-lg font-medium bg-[#F7F3E8] p-4 rounded-xl border border-[#0B2B1C]/5 shadow-sm">
+                <span className="text-[#2E7D4F] mt-1 text-xl">➔</span>
+                <div>
+                  <strong className="block text-[#0B2B1C] mb-1">Collecting the Latex</strong>
+                  <span className="text-[#1F2A24]/80 text-base">Gathering the raw latex as it drips from the cuts, readying it for the vulcanization process with sulphur.</span>
+                </div>
+              </li>
+            </ul>
           </div>
 
           <p className="text-xs text-[#1F2A24]/60 italic mt-8 border-t border-[#0B2B1C]/10 pt-4">
@@ -60,13 +82,7 @@ export default function SulphurRubberPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in Rubber Grade Sulphur?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+      <ProductCTA productName="SULPHUR POWDER (Rubber, Tyre & Microfine Grade)" />
     </main>
   );
 }

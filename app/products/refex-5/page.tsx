@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ProductCTA from "@/app/components/ProductCTA";
+
 
 export default function Refex5Page() {
   return (
@@ -40,6 +42,7 @@ export default function Refex5Page() {
 
       <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
         <div className="space-y-12">
+          
           <div>
             <p className="text-lg font-medium leading-relaxed">
               Fipronil 5% SC is an insecticide which is used to control insects like stem borer, brown plant hopper, green leaf hopper, rice leaf folder, rice gall midge, white backed plant hopper, whorl maggot in rice. DBM in cabbage thrips, aphids and fruit borer in chills, early shoot borer and root borer in sugarcane and Aphids, jassids, Thrips, White fly and boll worm in cotton.
@@ -50,16 +53,17 @@ export default function Refex5Page() {
             <div>
               <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Direction of Use</h4>
               <p className="text-lg font-medium leading-relaxed">
-                Plant Protection Equipment: high volume nozzle fitted to sprayers like knap-sack, Air pressure Foot Pump, Hard rocker or power operated spraying machine may be used.
+                <strong>Plant Protection Equipment:</strong> High volume nozzle fitted to sprayers like knap-sack, Air pressure Foot Pump, Hard rocker or power operated spraying machine may be used. Compression Knapsack Sprayer with flat fan/flood jet nozzle is also recommended.
               </p>
             </div>
             <div>
               <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Time of Application</h4>
-              <p className="text-lg font-medium leading-relaxed">
-                <strong>Rice:</strong> The Fipronil application must be given between 25 to 30 days after transplanting.<br/>
-                <strong>Cabbage & Chilli:</strong> First spray is to be given at 30 to 50 days after transplanting or when pest incidence is noticed. Repeat 2 to 3 sprays at 7 to 10 days interval.<br/>
-                <strong>Sugarcane:</strong> For earlier shoot borer foliar application at 35 days after planting (DAP) and for root borer drenching of soil at planting.
-              </p>
+              <ul className="text-lg font-medium leading-relaxed space-y-2">
+                <li><strong>Rice:</strong> Give between 25 to 30 days after transplanting.</li>
+                <li><strong>Cabbage:</strong> First spray at 30 to 35 days after transplanting or when pest incidence is noticed. Repeat 2-3 sprays at 7-10 days interval.</li>
+                <li><strong>Chilli:</strong> First spray at 40 to 50 days after transplanting or when pest incidence is noticed. Repeat 2-3 sprays at 1-10 days interval.</li>
+                <li><strong>Sugarcane:</strong> For earlier shoot borer, foliar application at 35 days after planting (DAP) and for root borer drenching of soil at planting.</li>
+              </ul>
             </div>
           </div>
 
@@ -71,6 +75,7 @@ export default function Refex5Page() {
                 "Avoid contact with mouth, eyes and skin.",
                 "Avoid inhalation of the spray mist. Spray in the direction of wind.",
                 "Wash thoroughly the contaminated clothes and parts of the body after spraying.",
+                "Do not smoke, drink, eat and chew anything while spraying.",
                 "Wear full protective clothing while mixing and spraying."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-lg font-medium">
@@ -86,8 +91,45 @@ export default function Refex5Page() {
               <p className="text-lg font-medium leading-relaxed">Irritability, lethargy, muscle tremors, convulsions may occur.</p>
             </div>
             <div>
-              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Phytotoxicity & Antidote</h4>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Antidote</h4>
               <p className="text-lg font-medium leading-relaxed">No specific antidote is known. Treat symptomatically.</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">First Aid</h4>
+            <ul className="space-y-3">
+              {[
+                "If clothing and skin are contaminated, remove the clothes and wash the contaminated skin with copious amount of soap and water.",
+                "If eyes are contaminated, flush with plenty of saline/clean water for about 10 to 15 minutes.",
+                "If inhaled, remove the patient to fresh air."
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                  <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Disposal Of Used Container</h4>
+              <p className="text-lg font-medium leading-relaxed">
+                It shall be the duty of manufactures, formulators and operators to dispose packages or surplus materials and washings from the machine and container in a safe manner so as to prevent environmental and water pollution.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Storage Conditions</h4>
+              <ul className="space-y-3">
+                {[
+                  "The packages containing the insecticides shall be stored in separate rooms or premises away from the rooms or premises used for storing other articles particularly food articles or shall be kept in separate almirahs under lock and key.",
+                  "The rooms or premises meant for storing the insecticides shall be well lit, well built, dry, cool, ventilated and of sufficient dimensions to avoid contamination with vapour."
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                    <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -97,13 +139,7 @@ export default function Refex5Page() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in REFEX 5?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+     <ProductCTA productName="REFEX 5 (Fipronil 5% SC)" />
     </main>
   );
 }

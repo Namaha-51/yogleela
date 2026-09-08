@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ProductCTA from "@/app/components/ProductCTA";
 
 export default function CosmicFertilePage() {
   return (
@@ -38,9 +39,10 @@ export default function CosmicFertilePage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
-        <div className="space-y-12">
+     <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
+        <div className="space-y-16">
           
+          {/* KEY FUNCTIONS */}
           <div>
             <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Key Functions</h4>
             <ul className="space-y-3">
@@ -52,12 +54,13 @@ export default function CosmicFertilePage() {
                 "Promotes nodulation in the legumes, thereby helps in nitrogen fixation."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-lg font-medium">
-                  <span className="text-[#2E7D4F] mt-1">➔</span>{item}[cite: 12]
+                  <span className="text-[#2E7D4F] mt-1">➔</span>{item}
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* QUANTITATIVE & QUALITATIVE IMPROVEMENT */}
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Increases</h4>
@@ -69,7 +72,7 @@ export default function CosmicFertilePage() {
                   "Yield across all the crops like paddy, Wheat, Cotton, Groundnut, Mustard, Sunflower, Onion, Chilly, Garlic, Vegetables, Sugarcane, Banana, etc."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-lg font-medium">
-                    <span className="text-[#2E7D4F] mt-1">➔</span>{item}[cite: 12]
+                    <span className="text-[#2E7D4F] mt-1">➔</span>{item}
                   </li>
                 ))}
               </ul>
@@ -85,21 +88,109 @@ export default function CosmicFertilePage() {
                   "Nutritive quality of forage."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-lg font-medium">
-                    <span className="text-[#2E7D4F] mt-1">➔</span>{item}[cite: 12]
+                    <span className="text-[#2E7D4F] mt-1">➔</span>{item}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
+          {/* APPLICATION */}
           <div>
             <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Application</h4>
             <p className="text-lg font-medium leading-relaxed mb-4">
-              <strong>Time:</strong> It is most suitable for giving with 1st or 2nd fertilizer top dressing[cite: 12].
+              <strong>Time:</strong> It is most suitable for giving with 1st or 2nd fertilizer top dressing.
             </p>
             <p className="text-lg font-medium leading-relaxed">
-              <strong>Method:</strong> Use 1 kg everyday through drip OR after every alternate day OR divide it with every liquid fertilizer dose. Use 3 kg of ‘Cosmic Fertile’ per acre, Close one line of drip & See the difference…[cite: 12]
+              <strong>Method:</strong> Use 1 kg everyday through drip OR after every alternate day OR divide it with every liquid fertilizer dose. Use 3 kg of ‘Cosmic Fertile’ per acre, Close one line of drip & See the difference…
             </p>
+          </div>
+
+          {/* CROPS BENEFITTED */}
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-8 border-b-2 border-[#F5C518] inline-block pb-1">Crops Benefitted</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: "Paddy", desc: "Increase of yield by 15-20%, more productive tillers, optimum fibrous root growth, bold & shiny grass." },
+                { name: "Groundnut", desc: "Stimulates root growth, enhances nodulation for nitrogen fixation, improves shelling/kernel size, increases yield by 15-20%." },
+                { name: "Mustard", desc: "Increases branches and photosynthetic area, significantly higher oil yield and seed oil content." },
+                { name: "Chilly", desc: "Stimulates root growth, enhances shelf life, reduces storage losses, increases yield by 20-35%." },
+                { name: "Grapes", desc: "Increases yield by 10-25%, optimum growth of berry bunch. Recommended: 3.0 kg/acre at 25-30 days after April & October pruning." },
+                { name: "Sugarcane", desc: "Enhances tillering, internode elongation, stalk girth, and commercial cane sugar % (CCS). Yield increases by 10-25%." },
+                { name: "Banana", desc: "Significant effect on hands and fingers development. Recommended dose: 1st - 2.5g per plant at 30-35 Days after Planting." },
+                { name: "Wheat", desc: "Increased root growth, more productive tillers, significant increase of protein in wheat grains, increased grain yield." },
+                { name: "Bt Cotton", desc: "Improves nutrient uptake to meet higher requirements. Increases weight of final product and yield by 20-25%." },
+                { name: "Soyabean", desc: "Improves root growth, nitrogen fixation, leaf size for photosynthesis, and oil content in seeds." },
+                { name: "Potato", desc: "Stimulates root growth and development. Increases yield by 20-35%." },
+                { name: "Onion", desc: "Helps root mass growth, thinner neck of bulbs, better shelf life. Increases yield by 15-30%." }
+              ].map((crop, i) => (
+                <div key={i} className="bg-[#F7F3E8] p-6 rounded-xl shadow-sm border border-[#0B2B1C]/5 hover:shadow-md transition-shadow">
+                  <h5 className="text-xl font-bold text-[#2E7D4F] mb-2">{crop.name}</h5>
+                  <p className="text-[15px] font-medium text-[#1F2A24]/90 leading-relaxed">{crop.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center font-bold text-[#0B2B1C] mt-8 text-lg">
+              AND MANY MORE PRODUCTS CAN BE ADDED TO THIS CATEGORY...........
+            </p>
+          </div>
+
+          {/* DIRECTION OF USE & PRECAUTIONS */}
+          <div className="space-y-12 border-t border-[#0B2B1C]/10 pt-12">
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Direction of Use</h4>
+              <p className="text-lg font-medium leading-relaxed mb-4">
+                Sulphur is not recommended for application on sulphur "shy" vegetables e.g. cucurbits etc. and certain variety apples, pears and other fruits where high temp (85 deg F or 30 deg. C) prevail sulphur will be phytotoxic.
+              </p>
+              <p className="text-lg font-medium leading-relaxed">
+                <strong>Plant Protection equipment:</strong> Knapsack sprayer, Foot sprayer, Compression Knapsack sprayer with flat fan / flood jet nozzle
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Precautions</h4>
+              <ul className="space-y-3">
+                {[
+                  "Keep away from foodstuffs, empty foodstuff containers and animals food",
+                  "Avoid contact with mouth, eyes and skin",
+                  "Avoid inhalation of the spray mist. Spray in the direction of wind",
+                  "Wash thoroughly the contaminated clothes and parts of the body after spraying",
+                  "Do not smoke, drink, eat and chew anything while spraying.",
+                  "Wear full protective clothing while mixing and spraying."
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                    <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Phytotoxicity</h4>
+                <p className="text-lg font-medium leading-relaxed">The product is not phytotoxic when used as per field recommendation.</p>
+              </div>
+              <div>
+                <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Symptoms of Poisoning</h4>
+                <p className="text-lg font-medium leading-relaxed">Nausea, vomiting, headache and irritation to the bronchii, eyes and lungs may occur.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">First Aid</h4>
+              <ul className="space-y-3">
+                {[
+                  "If swallowed, induce vomiting by tickling the back of throat. Repeat it until the vomitus is clear. Do not induce vomiting if the patient is unconscious.",
+                  "If clothing and skin are contaminated, remove the clothes and wash the contaminated skin with copious amount of soap and water.",
+                  "If eyes are contaminated, flush with plenty of saline/clean water for about 10 to 15 minutes.",
+                  "If inhaled, remove the patient to fresh air."
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                    <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <p className="text-xs text-[#1F2A24]/60 italic mt-8 border-t border-[#0B2B1C]/10 pt-4">
@@ -108,13 +199,8 @@ export default function CosmicFertilePage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in COSMIC FERTILE?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+     <ProductCTA productName="COSMIC FERTILE (Sulphur 90% WDG)" />
     </main>
   );
 }
+

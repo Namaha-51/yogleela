@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ProductCTA from "@/app/components/ProductCTA";
 
 export default function SulphurAmlasarPage() {
   return (
@@ -43,10 +44,10 @@ export default function SulphurAmlasarPage() {
           <div>
             <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Pharmaceutical & Ayurvedic Uses</h4>
             <p className="text-lg font-medium leading-relaxed mb-4">
-              Sulphur formulations are used in skin diseases such as acne, eczema and scabies, fungal infections etc. It is also used in toiletries in the preparation of Sulphur Soap[cite: 6].
+              Sulphur formulations are used in skin diseases such as acne, eczema and scabies, fungal infections etc. It is also used in toiletries in the preparation of Sulphur Soap.
             </p>
             <p className="text-lg font-medium leading-relaxed">
-              It is also widely used in the preparation of some ayurvedic medicines since many centuries. In short, Sulphur is used in ayurvedic medicines, Sulpha drugs & also in ointments for skin diseases[cite: 6].
+              It is also widely used in the preparation of some ayurvedic medicines since many centuries. In short, Sulphur is used in ayurvedic medicines, Sulpha drugs & also in ointments for skin diseases.
             </p>
           </div>
           
@@ -56,13 +57,7 @@ export default function SulphurAmlasarPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in SULPHUR AMLASAR?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+      <ProductCTA productName="RSULPHUR POWDER PHARMA GRADE (AMLASAR)" />
     </main>
   );
 }

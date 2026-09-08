@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ProductCTA from "@/app/components/ProductCTA";
 
 export default function ConcuroPage() {
   return (
@@ -43,24 +44,72 @@ export default function ConcuroPage() {
           
           <div>
             <p className="text-lg font-medium leading-relaxed">
-              Tebuconazole 10% Sulphur 65% WG (water dispersible granule) is a effective fungicide with protective, creative and eradicative action. It controls powdery mildew, fruit rot diseases of Chilli and leaf spot, pod blight disease of Soybean[cite: 16].
+              Tebuconazole 10% Sulphur 65% WG (water dispersible granule) is a effective fungicide with protective, creative and eradicative action. It controls powdery mildew, fruit rot diseases of Chilli and leaf spot, pod blight disease of Soybean.
             </p>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Direction of Use</h4>
+            <div className="text-lg font-medium leading-relaxed space-y-4">
+              <p>
+                <strong>(a) Preparation of spray Mixture:</strong> Take the required quantity of Hexaconazole 5% SC dilute with a little water as per spray plume required and mixed well again by stirring.
+              </p>
+              <p>
+                <strong>(b) Plant Protection Equipment:</strong> The most commonly used sprayer are Bucket pump sprayer, Stirrup pump sprayer, Rocking sprayer, Foot sprayer, Wheel barrow sprayer, Compression knapsack sprayer, Compression knapsack battery sprayer and ASPEE HTP power sprayer. 
+                <br/><br/>
+                <strong>COMPATIBILITY:</strong> Hexaconazole 5% SC is compatible with the commonly used insecticide and fungicides.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Precautions</h4>
+            <ul className="space-y-3">
+              {[
+                "Keep away from foodstuffs, empty foodstuff containers and animal food",
+                "Avoid contact with mouth, eyes and skin.",
+                "Avoid inhalation the spray mist. Spray in the direction of wind.",
+                "Wash thoroughly the contaminated clothes and parts of the body after spraying",
+                "Do not smoke, drink, eat and chew anything while spraying.",
+                "Wear full protective clothing while mixing and spraying."
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                  <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Direction of Use</h4>
-              <p className="text-lg font-medium leading-relaxed">
-                Take the required quantity of Hexaconazole 5% SC dilute with a little water as per spray plume required and mixed well again by string[cite: 16]. COMPATIBILITY: Hexaconazole 5% SC is compatible with the commonly used insecticide and fungicides[cite: 16].
-              </p>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Symptoms Of Poisoning</h4>
+              <p className="text-lg font-medium leading-relaxed">Nervousness, Anxiety, tremors, convulsions, allergic manifestations may occur.</p>
             </div>
             <div>
-              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Symptoms & Antidote</h4>
-              <p className="text-lg font-medium leading-relaxed">
-                <strong>Symptoms:</strong> Nervousness, Anxiety, tremors, convulsions, allergic manifestations may occur[cite: 16].<br/>
-                <strong>Antidote:</strong> No specific antidote. Treat symptomatically[cite: 16].
-              </p>
+              <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Antidote</h4>
+              <p className="text-lg font-medium leading-relaxed">No specific antidote. Treat symptomatically</p>
             </div>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">First Aid</h4>
+            <ul className="space-y-3">
+              {[
+                "If swallowed, induce vomiting by tickling the back of throat. Repeat it until the vomitus is clear. Do not induce vomiting if the patient is unconscious.",
+                "If clothing and skin are contaminated, remove the clothes and wash the contaminated skin with copious amount of soap and water.",
+                "If eyes are contaminated, flush with plenty of saline/clean water for about 10 to 15 minutes.",
+                "If inhaled, remove the patient to fresh air"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-lg font-medium">
+                  <span className="text-[#2E7D4F] mt-1">➔</span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Phytotoxicity</h4>
+            <p className="text-lg font-medium leading-relaxed">Hexaconazole 5% SC is not phytotoxic when used as per recommendations</p>
           </div>
 
           <p className="text-xs text-[#1F2A24]/60 italic mt-8 border-t border-[#0B2B1C]/10 pt-4">
@@ -69,13 +118,7 @@ export default function ConcuroPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in CONCURO 5?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+     <ProductCTA productName="CONCURO 5 (Hexaconazole 5% SC)" />
     </main>
   );
 }

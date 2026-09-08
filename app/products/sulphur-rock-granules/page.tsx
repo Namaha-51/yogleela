@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ProductCTA from "@/app/components/ProductCTA";
+
 
 export default function SulphurRockPage() {
   return (
@@ -41,18 +43,18 @@ export default function SulphurRockPage() {
       <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
         <div className="space-y-8">
           <div>
-            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Industrial Applications</h4>
+            <h4 className="text-2xl font-black text-[#0B2B1C] mb-4 border-b-2 border-[#F5C518] inline-block pb-1">Direction of Use</h4>
             <p className="text-lg font-medium leading-relaxed mb-4">
-              Sulphur is used in many other industries like sugar, starch, khandsari and many chemical industries like in the preparation of sulphuric acid[cite: 9].
+              Sulphur is used in many other industries like sugar, starch, khandsari and many chemical industries like in the preparation of sulphuric acid.
             </p>
             <p className="text-lg font-medium leading-relaxed mb-4">
-              <strong>Sulphitation Process:</strong> Sulphur is used in the process of sulphitation in the sugar industry. Sulphitation is the practice of adding sulphur dioxide (SO2) to process streams in a sugar factory. Sulphur is burned to form SO2 to be used in the sulphitation process[cite: 9].
+              <strong>Sulphitation Process:</strong> Sulphur is used in the process of sulphitation in the sugar industry. Sulphitation is the practice of adding sulphur dioxide (SO2) to process streams in a sugar factory. Sulphur is burned to form SO2 to be used in the sulphitation process.
             </p>
             <p className="text-lg font-medium leading-relaxed mb-4">
-              The basic reaction is S + O2 = SO2 where the oxygen is supplied by atmospheric air[cite: 9].
+              The basic reaction is S + O2 = SO2 where the oxygen is supplied by atmospheric air.
             </p>
             <p className="text-lg font-medium leading-relaxed">
-              Sulphur dioxide is used by sugar beet processors in the sugar industry to reduce & prevent color formation in white refined sugar. It is basically used for refining & decolorising sugar in the sugar industry[cite: 9].
+              Sulphur dioxide is used by sugar beet processors in the sugar industry to reduce & prevent color formation in white refined sugar. It is basically used for refining & decolorising sugar in the sugar industry.
             </p>
           </div>
           
@@ -62,13 +64,7 @@ export default function SulphurRockPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F3E8] text-center border-t border-[#0B2B1C]/10">
-        <h3 className="text-3xl md:text-4xl font-black text-[#0B2B1C] mb-8">Interested in SULPHUR ROCK / GRANULES?</h3>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/contact" className="px-10 py-4 bg-[#2E7D4F] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#0B2B1C] transition-colors">Request a Quote</Link>
-          <a href="https://wa.me/919920878518" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] text-white text-xl font-bold rounded-lg shadow-xl hover:bg-[#1DA851] transition-colors">WhatsApp Us</a>
-        </div>
-      </section>
+      <ProductCTA productName="SULPHUR ROCK / GRANULES / PALLETS" />
     </main>
   );
 }
