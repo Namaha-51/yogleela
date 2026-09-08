@@ -222,7 +222,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 4. OUR PRODUCTS */}
+    {/* 4. OUR PRODUCTS */}
       <section className="py-20 md:py-32 px-6 lg:px-12 bg-white">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="max-w-7xl mx-auto">
           
@@ -249,26 +249,28 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { title: "SUNVET-DF", sub: "Sulphur 80% WDG", desc: "Grapes, apple, mango, cumin", img: "04_product_sunvet-df.png" },
-              { title: "COSMIC FERTILE", sub: "Sulphur 90% WDG", desc: "Nutrient uptake and healthy crop growth", img: "05_product_cosmic-fertile.png" },
-              { title: "DUOCARE", sub: "Sulphur 65% + Tebuconazole 10%", desc: "Chilli, soybean, groundnut", img: "06_product_duocare_NEEDS-MANUAL-CUT.webp" }
+              { title: "SUNVET-DF", sub: "Sulphur 80% WDG", desc: "Grapes, apple, mango, cumin", img: "04_product_sunvet-df.png", slug: "sunvet-df" },
+              { title: "COSMIC FERTILE", sub: "Sulphur 90% WDG", desc: "Nutrient uptake and healthy crop growth", img: "05_product_cosmic-fertile.png", slug: "cosmic-fertile" },
+              { title: "DUOCARE", sub: "Sulphur 65% + Tebuconazole 10%", desc: "Chilli, soybean, groundnut", img: "06_product_duocare_NEEDS-MANUAL-CUT.webp", slug: "duocare" }
             ].map((prod, i) => (
               <motion.div variants={fadeUp} key={i} className="flex flex-col group cursor-pointer">
-                {/* FLOATING PRODUCT IMAGE */}
-                <motion.div 
-                  whileHover={{ y: -15 }}
-                  className="w-full h-[400px] bg-[#F7F3E8] rounded-3xl mb-8 relative flex items-center justify-center p-8 overflow-hidden border border-slate-200 shadow-sm group-hover:shadow-2xl transition-all duration-500"
-                >
-                  <motion.img 
-                    animate={imageFloat.animate}
-                    src={`/images/${prod.img}`} 
-                    alt={`${prod.title} ${prod.sub} pack by Yogleela Sulphur`} 
-                    className="w-full h-full object-contain drop-shadow-2xl" 
-                  />
-                </motion.div>
-                <h3 className="text-3xl font-black text-[#8E1B1B] mb-2">{prod.title}</h3>
-                <p className="text-xl font-bold text-[#0B2B1C] mb-4">{prod.sub}</p>
-                <p className="text-[#1F2A24] text-xl font-medium">{prod.desc}</p>
+                <Link href={`/products/${prod.slug}`} className="flex flex-col group cursor-pointer w-full">
+                  {/* FLOATING PRODUCT IMAGE */}
+                  <motion.div 
+                    whileHover={{ y: -15 }}
+                    className="w-full h-[400px] bg-[#F7F3E8] rounded-3xl mb-8 relative flex items-center justify-center p-8 overflow-hidden border border-slate-200 shadow-sm group-hover:shadow-2xl transition-all duration-500"
+                  >
+                    <motion.img 
+                      animate={imageFloat.animate}
+                      src={`/images/${prod.img}`} 
+                      alt={`${prod.title} ${prod.sub} pack by Yogleela Sulphur`} 
+                      className="w-full h-full object-contain drop-shadow-2xl" 
+                    />
+                  </motion.div>
+                  <h3 className="text-3xl font-black text-[#8E1B1B] mb-2 group-hover:text-[#2E7D4F] transition-colors">{prod.title}</h3>
+                  <p className="text-xl font-bold text-[#0B2B1C] mb-4">{prod.sub}</p>
+                  <p className="text-[#1F2A24] text-xl font-medium">{prod.desc}</p>
+                </Link>
               </motion.div>
             ))}
           </div>
