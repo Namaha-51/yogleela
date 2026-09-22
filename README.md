@@ -19,9 +19,9 @@ A high-performance, statically generated enterprise web platform engineered for 
 
 This platform was architected from scratch to bypass generic templates, delivering a bespoke, high-conversion enterprise solution tailored for both agricultural dealers and industrial stakeholders.
 
-* **Bespoke UI/UX Architecture:** Developed a heavily customized, component-driven user interface utilizing Tailwind CSS. The design system features layered gradients, precise typography, and a sticky navigation header that dynamically shifts opacity based on scroll position[cite: 18]. 
+* **Bespoke UI/UX Architecture:** Developed a heavily customized, component-driven user interface utilizing Tailwind CSS. The design system features layered gradients, precise typography, and a sticky navigation header that dynamically shifts opacity based on scroll position. 
 * **Optimized Static Export Pipeline:** Configured the Next.js build pipeline (`output: export`) for static HTML/CSS/JS generation. This completely eliminates database query latency and server-side rendering overhead, allowing the application to achieve near-instantaneous load times via CDN edge networks.
-* **Global Accessibility Integration:** Engineered accessible communication channels directly into the UI, including a persistent WhatsApp quick-action floating widget and a localized language switcher component for international clients[cite: 18].
+* **Global Accessibility Integration:** Engineered accessible communication channels directly into the UI, including a persistent WhatsApp quick-action floating widget and a localized language switcher component for international clients.
 * **High-Performance Animation Subsystem:** Integrated Framer Motion to handle complex scroll-driven animations without compromising Core Web Vitals. This includes parallax hero backgrounds, interactive floating product image states, and staggered container reveals.
 
 ---
@@ -31,7 +31,7 @@ This platform was architected from scratch to bypass generic templates, deliveri
 ![Yogleela Sulphur Product Grid](app/products/img22.png)
 
 ### 1. Complex Layouts & Responsive Data Rendering
-To showcase the company's manufacturing scale, the Infrastructure section utilizes an advanced, responsive masonry-style "bento box" grid layout[cite: 19]. This was achieved through meticulous Tailwind CSS grid-template mapping, ensuring that images scale dynamically while maintaining their aspect ratios and structural integrity across all viewports—from ultra-wide desktop monitors to mobile devices[cite: 19]. 
+To showcase the company's manufacturing scale, the Infrastructure section utilizes an advanced, responsive masonry-style "bento box" grid layout. This was achieved through meticulous Tailwind CSS grid-template mapping, ensuring that images scale dynamically while maintaining their aspect ratios and structural integrity across all viewports—from ultra-wide desktop monitors to mobile devices. 
 
 ### 2. Dynamic Client-Side Routing via Data Structures
 Instead of hardcoding repetitive pages, the scalable product catalog is structured utilizing Next.js routing paradigms paired with structured JSON-like data arrays. Product rendering maps over these data structures, extracting specific routing slugs (e.g., `sunvet-df`, `cosmic-fertile`) and wrapping components in Next.js `<Link>` tags. This enables instantaneous, pre-fetched client-side page transitions without full browser reloads.
