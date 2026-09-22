@@ -1,13 +1,13 @@
 {
   "redirects": [
     {
-      "source": "/infrastructure",
-      "destination": "/Infrastructure",
+      "source": "/about.html",
+      "destination": "/about",
       "permanent": true
     },
     {
-      "source": "/Infrastructure.html",
-      "destination": "/Infrastructure",
+      "source": "/About.html",
+      "destination": "/about",
       "permanent": true
     },
     {
@@ -33,6 +33,16 @@
     {
       "source": "/aboutus",
       "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/infrastructure",
+      "destination": "/Infrastructure",
+      "permanent": true
+    },
+    {
+      "source": "/Infrastructure.html",
+      "destination": "/Infrastructure",
       "permanent": true
     },
     {
