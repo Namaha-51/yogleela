@@ -2,7 +2,7 @@
 
 A high-performance, statically generated enterprise web platform engineered for Yogleela Sulphur, a leading global manufacturer of agricultural and industrial chemicals. This repository contains the source code for the complete modernization of the organization's digital infrastructure, transitioning a legacy application into a highly scalable, edge-delivered React architecture.
 
-![Yogleela Sulphur Homepage and Hero Section](./img1.jpg)
+![Yogleela Sulphur Homepage and Hero Section](./img1.png)
 
 ## Architecture & Technology Stack
 
@@ -28,7 +28,7 @@ This platform was architected from scratch to bypass generic templates, deliveri
 
 ## Technical Implementation Deep-Dive
 
-![Yogleela Sulphur Infrastructure Grid](./img2.jpg)
+![Yogleela Sulphur Infrastructure Grid](./img2.png)
 
 ### 1. Complex Layouts & Responsive Data Rendering
 To showcase the company's manufacturing scale, the Infrastructure section utilizes an advanced, responsive masonry-style "bento box" grid layout[cite: 19]. This was achieved through meticulous Tailwind CSS grid-template mapping, ensuring that images scale dynamically while maintaining their aspect ratios and structural integrity across all viewports—from ultra-wide desktop monitors to mobile devices[cite: 19]. 
