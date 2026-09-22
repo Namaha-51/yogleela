@@ -21,6 +21,21 @@
       "permanent": true
     },
     {
+      "source": "/aboutus.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/AboutUs",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/aboutus",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
       "source": "/Career.html",
       "destination": "/career",
       "permanent": true
