@@ -28,7 +28,7 @@ This platform was architected from scratch to bypass generic templates, deliveri
 
 ## Technical Implementation Deep-Dive
 
-![Yogleela Sulphur Infrastructure Grid](./img2.png)
+![Yogleela Sulphur Product Grid](./img22.png)
 
 ### 1. Complex Layouts & Responsive Data Rendering
 To showcase the company's manufacturing scale, the Infrastructure section utilizes an advanced, responsive masonry-style "bento box" grid layout[cite: 19]. This was achieved through meticulous Tailwind CSS grid-template mapping, ensuring that images scale dynamically while maintaining their aspect ratios and structural integrity across all viewports—from ultra-wide desktop monitors to mobile devices[cite: 19]. 
