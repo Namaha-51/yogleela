@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/Infrastructure.html",
+      "destination": "/infrastructure",
+      "permanent": true
+    },
+    {
+      "source": "/AboutUs.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/Career.html",
+      "destination": "/career",
+      "permanent": true
+    },
+    {
+      "source": "/Contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/Products.html",
+      "destination": "/products",
+      "permanent": true
+    }
+  ]
+}
