@@ -1,8 +1,18 @@
 {
   "redirects": [
     {
+      "source": "/infrastructure",
+      "destination": "/Infrastructure",
+      "permanent": true
+    },
+    {
       "source": "/Infrastructure.html",
-      "destination": "/infrastructure",
+      "destination": "/Infrastructure",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
       "permanent": true
     },
     {
