@@ -61,12 +61,7 @@
       "permanent": true
     },
     {
-      "source": "/exact-url-from-your-phone-for-manufacturing",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/exact-url-from-your-phone-for-powder",
+      "source": "/sulphur-powder.html",
       "destination": "/products",
       "permanent": true
     }
