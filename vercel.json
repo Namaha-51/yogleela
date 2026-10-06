@@ -60,5 +60,15 @@
       "destination": "/products",
       "permanent": true
     }
+    {
+      "source": "/exact-url-from-your-phone-for-manufacturing",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/exact-url-from-your-phone-for-powder",
+      "destination": "/products",
+      "permanent": true
+    }
   ]
 }
